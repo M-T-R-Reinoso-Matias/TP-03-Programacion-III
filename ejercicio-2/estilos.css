@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+#filter-form {
+  margin-bottom: 1rem;
+}
+
+input {
+  margin-left: 0.5rem;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+}
+
+#error {
+  color: red;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+ul {
+  margin-top: 1rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
