@@ -1,0 +1,58 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.Portada {
+  background: linear-gradient(135deg, #1f1f1f, #2c3e50); /* Fondo oscuro con degradado elegante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contenedor {
+  background-color: #2e2e2e;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.contenedor h1 {
+  font-size: 2.2rem;
+  color: #ecf0f1;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: #bdc3c7;
+  margin-bottom: 30px;
+}
+
+.botonera {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.boton {
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
