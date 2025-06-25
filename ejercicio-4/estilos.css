@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+button {
+  margin: 0 1rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:enabled {
+  background-color: #d5d5d5;
+}
