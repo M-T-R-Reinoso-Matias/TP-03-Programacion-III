@@ -18,8 +18,26 @@ body {
   color: #ecf0f1;
 }
 
-input,
-label,
+label {
+  display: block;
+  margin: 1rem 0 0.4rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 6px;
+  border-radius: 6px;
+  background-color: #444;
+  color: white;
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+}
 button {
   width: 100%;
   padding: 10px 0rem;
@@ -52,7 +70,7 @@ li {
   margin: 0.3rem 0;
   padding: 0.2rem 0.5rem;
   border-left: 4px solid #3498db;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .mensaje {
