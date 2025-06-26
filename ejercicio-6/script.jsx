@@ -1,75 +1,64 @@
 const { useState } = React;
 
-function IMCCalculadora() {
-  const [peso, setPeso]     = useState('');
-  const [altura, setAltura] = useState('');
-  const [imc, setImc]       = useState(null);
-  const [clase, setClase]   = useState('');
+function App() {
+  const [peso, setPeso] = useState("");
+  const [altura, setAltura] = useState("");
+  const [imc, setIMC] = useState(null);
 
-  const calcularIMC = (e) => {
-    e.preventDefault();
-    const p = parseFloat(peso);
-    const a = parseFloat(altura);
-    if (!p || !a) {
-      setImc(null);
-      setClase('');
-      return;
-    }
-    const valor = p / (a * a);
-    const redondeado = Math.round(valor * 10) / 10;
-    setImc(redondeado);
+  const calcularIMC = () => {
+    const pesoNum = parseFloat(peso);
+    const alturaNum = parseFloat(altura) / 100;
 
-    if (valor < 18.5) {
-      setClase('bajo');
-    } else if (valor < 25) {
-      setClase('normal');
-    } else if (valor < 30) {
-      setClase('sobrepeso');
+    if (pesoNum > 0 && alturaNum > 0) {
+      const resultado = pesoNum / (alturaNum * alturaNum);
+      setIMC(resultado.toFixed(2));
     } else {
-      setClase('obesidad');
+      setIMC(null);
     }
   };
 
-  return (
-    <div>
-      <h1>Calculadora de IMC</h1>
-      <form onSubmit={calcularIMC}>
-        <label>
-          Peso (kg):
-          <input
-            type="number"
-            step="0.1"
-            value={peso}
-            onChange={e => setPeso(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Altura (m):
-          <input
-            type="number"
-            step="0.01"
-            value={altura}
-            onChange={e => setAltura(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Calcular</button>
-      </form>
+  const obtenerNivel = (valor) => {
+    if (valor < 18.5) return { mensaje: "Nivel Bajo", clase: "amarillo" };
+    if (valor < 25) return { mensaje: "Nivel Normal", clase: "verde" };
+    if (valor < 30) return { mensaje: "Sobrepeso", clase: "naranja" };
+    return { mensaje: "Obesidad", clase: "rojo" };
+  };
 
-      {imc !== null && (
-        <div className={`mensaje ${clase}`}>
-          Tu IMC es {imc} —{' '}
-          {clase === 'bajo' && 'Nivel bajo'}
-          {clase === 'normal' && 'Nivel normal'}
-          {clase === 'sobrepeso' && 'Nivel de sobrepeso'}
-          {clase === 'obesidad' && 'Nivel de obesidad'}
+  const nivel = imc ? obtenerNivel(parseFloat(imc)) : null;
+
+  return (
+    <div className="contenedor">
+      <h1>Calculadora de IMC</h1>
+
+      <label htmlFor="peso">Peso (kg):</label>
+      <input
+        id="peso"
+        type="number"
+        value={peso}
+        onChange={(e) => setPeso(e.target.value)}
+        placeholder="Ej: 70"
+      />
+
+      <label htmlFor="altura">Altura (cm):</label>
+      <input
+        id="altura"
+        type="number"
+        value={altura}
+        onChange={(e) => setAltura(e.target.value)}
+        placeholder="Ej: 170"
+      />
+
+      <button onClick={calcularIMC}>Calcular IMC</button>
+
+      {imc && (
+        <div className={`mensaje ${nivel.clase}`}>
+          <p>Tu IMC es <strong>{imc}</strong></p>
+          <p>{nivel.mensaje}</p>
         </div>
       )}
     </div>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<IMCCalculadora />);
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);

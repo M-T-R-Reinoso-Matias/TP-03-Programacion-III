@@ -1,45 +1,88 @@
 body {
-  font-family: sans-serif;
-  max-width: 400px;
-  margin: 2rem auto;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #1f1f1f, #2c3e50);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-label,
-input,
-button {
-  display: block;
+.contenedor {
+  background-color: #2e2e2e;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  color: #ecf0f1;
+  max-width: 500px;
   width: 100%;
-  margin: 0.5rem 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  background-color: #444;
+  color: white;
+  border: none;
+  margin-bottom: 1rem;
 }
 
 button {
-  padding: 0.5rem;
+  width: 100%;
+  padding: 12px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  border: none;
   font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
 }
 
 .mensaje {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  border-radius: 4px;
-  color: #333;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
   font-weight: bold;
+  text-align: center;
 }
 
-.bajo {
-  background-color: yellow;
+.amarillo {
+  background-color: #f1c40f;
+  color: #2c3e50;
 }
 
-.normal {
-  background-color: green;
+.verde {
+  background-color: #2ecc71;
+  color: #1f2d1f;
 }
 
-.sobrepeso {
-  background-color: orange;
+.naranja {
+  background-color: #e67e22;
+  color: #fff;
 }
 
-.obesidad {
-  background-color: red;
+.rojo {
+  background-color: #e74c3c;
+  color: #fff;
 }
