@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ejercicio 2 – Filtrar lista</title>
+  <title>Ejercicio 2 – Filtro de Palabras</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <h1>Filtro de Palabras</h1>
+  <div class="contenedor">
+    <h1>Filtro de Palabras</h1>
+    <form id="filter-form">
+      <label for="filtro">Ingresar texto:</label>
+      <input type="text" id="filtro" placeholder="Ej: manzana" />
 
-  <form id="filter-form">
-    <label>
-      Ingresar texto:
-      <input type="text" id="filtro" />
-    </label>
-    <button type="button" id="btnFiltrar">Filtrar</button>
-    <div id="error">⚠️ Debes ingresar texto para filtrar. ⚠️</div>
-  </form>
+      <button type="button" id="btnFiltrar">Filtrar</button>
 
-  <ul id="lista"></ul>
+      <div class="mensaje bajo" id="error" style="display: none;">
+        ⚠️ Debes ingresar texto para filtrar. ⚠️
+      </div>
+    </form>
+
+    <ul id="lista"></ul>
+  </div>
 
   <script src="script.js"></script>
 </body>
