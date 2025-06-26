@@ -4,7 +4,7 @@ function App() {
   const [izquierdaActiva, setIzquierdaActiva] = useState(true);
 
   return (
-    <div>
+    <div class="botones">
       <button
         onClick={() => setIzquierdaActiva(false)}
         disabled={!izquierdaActiva}
